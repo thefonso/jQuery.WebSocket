@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>jquery.WebSocket - Demonstration</title>
+    <meta name="description" content="Description">
+    <meta name="author" content="Benjamin Carl">
+
+    <script type="text/javascript" src="view/static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="view/static/js/jquery.url-0.0.1.js"></script>
+    <script type="text/javascript" src="../lib/jquery.WebSocket.js"></script>
+
+    <script type="text/javascript">
+
+        $(function(){
+
+	        // The WebSocket-Object (with resource + fallback)
+	        var ws = $.WebSocket('ws://127.0.0.1:9300');
+
+	        // WebSocket onerror event triggered also in fallback
+	        ws.onerror = function(e) {
+	            console.log('Error with WebSocket uid: ' + e.target.uid);
+	        };
+
+	        /**
+	         * demonstrate multiplexing
+	         */
+	        var pipe1;
+
+	        // if connection is opened => start opening a pipe (multiplexing)
+	        ws.onopen = function() {
+	            //
+	            pipe1 = ws.registerPipe('user/all', null, {
+	                onopen: function() {
+	                    console.log('pipe1 (' + this.uid + ') connected!');
+	                },
+	                onmessage: function(e) {
+	                    console.log('< pipe1 : ' + e.data);
+	                },
+	                onerror: function(e) {
+	                    console.log('< pipe1 error : ' + e.data);
+	                },
+	                onclose: function() {
+	                    console.log('pipe1 (' + pipe.uid + ') connection closed!');
+	                }
+	            });
+	        };
+        });
+    </script>
+  </head>
+<body>
+
+    <div id="foo">&nbsp;</div>
+
+</body>
+</html>
