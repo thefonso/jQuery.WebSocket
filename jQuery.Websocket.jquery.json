@@ -1,0 +1,36 @@
+{
+"name": "Websocket",
+"title": "jQuery Websocket",
+"description": "jQuery plugin for easy websocket access, multiplexing support and (XHR) fallback implementation with same API like websocket.",
+"keywords": [
+"websocket",
+"websockets",
+"multiplexing",
+"xhr"
+],
+"version": "0.0.1",
+"author": {
+"name": "clickalicious UG (i.G.) | Benjamin Carl",
+"url": "http://www.clickalicious.de"
+},
+"maintainers": [
+{
+"name": "Benjamin Carl",
+"email": "opensource@clickalicious.de",
+"url": "http://www.clickalicious.de"
+}
+],
+"licenses": [
+{
+"type": "BSD",
+"url": "http://www.opensource.org/licenses/bsd-license.php"
+}
+],
+"bugs": "https://github.com/clickalicious/jQuery.WebSocket/issues",
+"homepage": "http://clickalicious.github.com/jQuery.WebSocket/",
+"docs": "http://clickalicious.github.com/jQuery.WebSocket/",
+"download": "http://code.jquery.com/#websocket",
+"dependencies": {
+"jquery": ">=1.8"
+}
+}
