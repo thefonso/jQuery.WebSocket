@@ -2,10 +2,10 @@ jquery.WebSocket
 ================
 
 jquery.WebSocket enables WebSocket support for all Browsers. In older
-Browsers the WebSocket is emulated by using AJAX Long Polling as fall-
-back. But all instances of WebSocket providing the same interface and
-the same events! So no need to worry about writing application code
-based on WebSockets and it's events like onmessage, onclose ...
+Browsers the WebSocket is emulated by using AJAX Long Polling as fallback.
+But all instances of WebSocket providing the same interface and the same
+events! So no need to worry about writing application code based on
+WebSockets and it's events like onmessage, onclose ...
 
 One simple interface $.WebSocket(url, protocol, options); thats it.
 The same interface as current native WebSocket implementation. The same
